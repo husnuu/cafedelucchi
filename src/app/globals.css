@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Varsayılan değerler; çalışma anında root layout theme_settings'ten gelenlerle ezer. */
+:root {
+  --brand: #6b1a3a;
+  --brand-strong: #551430;
+  --on-brand: #ffffff;
+  --price: #7a2347;
+  --canvas: #f2edef;
+  --surface: #ffffff;
+  --chip: #f6f1f3;
+  --ink: #231a1e;
+  --muted: #6e6468;
+  --line: #eee7ea;
+  --radius-card: 1.5rem;
+  --radius-image: 0.625rem;
+
+  /* sticky başlık + sekme yüksekliği; kategori başlıkları bunun altına kayar */
+  --header-h: 3.5rem;
+  --tabs-h: 3.75rem;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-on-brand: var(--on-brand);
+  --color-price: var(--price);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-chip: var(--chip);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --radius-card: var(--radius-card);
+  --radius-image: var(--radius-image);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-logo: var(--font-logo);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Cam efekti — backdrop-filter desteklenmeyen/zayıf cihazlarda düz yarı saydam zemin */
+@utility glass {
+  background: rgb(20 24 22 / 0.55);
+  border: 1px solid rgb(255 255 255 / 0.16);
+  @supports (backdrop-filter: blur(1px)) {
+    background: rgb(255 255 255 / 0.1);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+}
+
+/* Ürün detayı: mobilde alttan açılan sayfa, geniş ekranda ortalanmış pencere */
+dialog.product-sheet {
+  margin: auto auto 0;
+  width: 100%;
+  max-width: 32rem;
+  max-height: 92svh;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  background: var(--surface);
+  color: var(--ink);
+  overflow: hidden;
+  animation: sheet-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+dialog.product-sheet::backdrop {
+  background: rgb(15 18 16 / 0.55);
+  animation: fade-in 200ms ease-out;
+}
+
+@media (min-width: 640px) {
+  dialog.product-sheet {
+    margin: auto;
+    border-radius: var(--radius-card);
+    max-height: 88vh;
+    animation-name: dialog-in;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
