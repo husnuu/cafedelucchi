@@ -5,7 +5,8 @@ import { defaultLocale, hasLocale, locales, type Locale } from "@/lib/i18n/confi
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const first = pathname.split("/")[1] ?? "";
-  if (hasLocale(first)) return;
+  // Dil önekli adresler ve kendi root layout'u olan Leon'un Meyhanesi menüsü olduğu gibi geçer
+  if (hasLocale(first) || first === "leonbalik") return;
 
   request.nextUrl.pathname = `/${preferredLocale(request)}${pathname === "/" ? "" : pathname}`;
   return NextResponse.redirect(request.nextUrl);

@@ -6,7 +6,7 @@ import { LogoBadge } from "@/components/menu/logo";
 
 export default async function NotFound() {
   const value = await localeParam();
-  const locale = hasLocale(value) ? value : defaultLocale;
+  const locale = value && hasLocale(value) ? value : defaultLocale;
   const t = getDictionary(locale);
 
   return (
