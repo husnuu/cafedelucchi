@@ -355,8 +355,8 @@ add(cHotCoffee, "Nescafe Sade", 195, { en: "Instant Coffee (Black)" });
 add(cHotCoffee, "Nescafe Sütlü", 200, { en: "Instant Coffee with Milk" });
 add(cHotCoffee, "Nescafe Sütten", 220, { en: "Instant Coffee Made with Milk" });
 add(cHotCoffee, "Ballı Süt", 235, { en: "Hot Milk with Honey" });
-add(cHotCoffee, "Türk Kahvesi", 120, { en: "Turkish Coffee" });
-add(cHotCoffee, "Sakızlı Türk Kahvesi", 145, { en: "Turkish Coffee with Mastic" });
+add(cHotCoffee, "Türk Kahvesi", 150, { en: "Turkish Coffee" });
+add(cHotCoffee, "Sakızlı Türk Kahvesi", 180, { en: "Turkish Coffee with Mastic" });
 
 const cFilter = category(gHot, "filtre-kahveler", "flame", { tr: "Filtre Kahveler", en: "Filter Coffee" }, "1442512595331-e89e73853f31");
 add(cFilter, "Filtre Kahve", 245, { en: "Filter Coffee" });
@@ -454,15 +454,15 @@ add(cMocktail, "Piña Colada", 350, { en: "Virgin Piña Colada", d: ["Hindistan 
 add(cMocktail, "Mojito", 350, { en: "Virgin Mojito", d: ["Limon, nane, şeker, soda", "Lime, mint, sugar, soda"] });
 
 const cSoft = category(gCold, "mesrubatlar", "glass-water", { tr: "Meşrubatlar", en: "Soft Drinks" }, "1581636625402-29b2a704ef13");
-add(cSoft, "Cola / Fanta / Sprite", 125, {
+add(cSoft, "Cola / Fanta / Sprite", 150, {
   og: [choice("og-soda", { tr: "Seçim", en: "Choice" }, [["Cola", "Cola"], ["Fanta", "Fanta"], ["Sprite", "Sprite"]])],
 });
-add(cSoft, "Cappy", 125, { og: [flavour([["Vişne", "Sour cherry"], ["Şeftali", "Peach"], ["Karışık", "Mixed fruit"]])] });
-add(cSoft, "Ice Tea", 125, { en: "Iced Tea", og: [flavour([["Şeftali", "Peach"], ["Limon", "Lemon"], ["Mango", "Mango"]])] });
-add(cSoft, "Soda", 75, { en: "Sparkling Mineral Water" });
+add(cSoft, "Cappy", 150, { og: [flavour([["Vişne", "Sour cherry"], ["Şeftali", "Peach"], ["Karışık", "Mixed fruit"]])] });
+add(cSoft, "Ice Tea", 150, { en: "Iced Tea", og: [flavour([["Şeftali", "Peach"], ["Limon", "Lemon"], ["Mango", "Mango"]])] });
+add(cSoft, "Soda", 100, { en: "Sparkling Mineral Water" });
 add(cSoft, "Su", 60, { en: "Water" });
-add(cSoft, "Ayran", 95);
-add(cSoft, "Red Bull", 285);
+add(cSoft, "Ayran", 120);
+add(cSoft, "Red Bull", 320);
 add(cSoft, "Churchill", 145);
 
 // ═════════════════════════ BAR ═════════════════════════
@@ -488,13 +488,13 @@ add(cCocktail, "Beyazıt", 685, { d: ["Absolut, Cardinal Melon, misket limonu su
 add(cCocktail, "Irish Coffee", 650, { d: ["Viski, espresso, krema", "Whisky, espresso, cream"] });
 
 const cShots = category(gBar, "shotlar", "flame", { tr: "Shot'lar", en: "Shots" }, "1470337458703-46ad1756a187");
-add(cShots, "Tekila", 350, { en: "Tequila" });
-add(cShots, "B-52", 350);
-add(cShots, "Sambuca", 350);
-add(cShots, "Jägermeister", 350);
-add(cShots, "Limoncello", 350);
-add(cShots, "Viski", 350, { en: "Whisky" });
-add(cShots, "Kanlı Beyin", 350, { en: "Bloody Brain", d: ["Archers, Baileys, grenadin", "Archers, Baileys, grenadine"] });
+add(cShots, "Tekila", 400, { en: "Tequila" });
+add(cShots, "B-52", 400);
+add(cShots, "Sambuca", 400);
+add(cShots, "Jägermeister", 400);
+add(cShots, "Limoncello", 400);
+add(cShots, "Viski", 400, { en: "Whisky" });
+add(cShots, "Kanlı Beyin", 400, { en: "Bloody Brain", d: ["Archers, Baileys, grenadin", "Archers, Baileys, grenadine"] });
 
 const cImport = category(gBar, "import-icecekler", "martini", { tr: "Import İçecekler", en: "Imported Spirits" }, "1527281400683-1aae777175f8");
 for (const [name, price] of [
